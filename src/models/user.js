@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const generatePassword = require("../helpers/generatePassword");
+// const generatePassword = require("../helpers/generatePassword");
 const bcrypt = require("bcryptjs");
 
 
@@ -29,7 +29,7 @@ var userSchema = new Schema(
     },
     password: {
       type: String,
-      required: [true, "password is requires"],
+      required: [true, "password is required"],
       minlength: [6, "password min 6 character"]
     },
   },
