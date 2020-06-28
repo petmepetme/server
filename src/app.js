@@ -14,7 +14,8 @@ db.once('open', function() {
 
 var mongodUri = `mongodb://${process.env.MLAB_USER}:${process.env.MLAB_PASS}${process.env.MLAB_URL}`
 mongoose.connect(mongodUri, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 })
 
 import indexRouter from './routes/index';
