@@ -29,7 +29,7 @@ var userSchema = new Schema(
     },
     password: {
       type: String,
-      required: [true, "password is requires"],
+      required: [true, "password is required"],
       minlength: [6, "password min 6 character"]
     },
   },
@@ -45,13 +45,14 @@ var userSchema = new Schema(
 //   );
 // });
 
-// userSchema.post("save", function(user) {
-//   generatePassword(this.email, this.password).then(function(newPassword) {
-//     User.update({ _id: user._id }, { password: newPassword })
-//       .then(function() {})
-//       .catch(function() {});
-//   });
-// });
+userSchema.post("save", function(user) {
+  generatePassword(this.email, this.password).then(function(newPassword) {
+    // console.log(`newPassword`, newPassword);
+    User.updateOne({ _id: user._id }, { password: newPassword })
+      .then(function() {})
+      .catch(function(err) { console.log(`err`, err);});
+  });
+});
 
 const User = mongoose.model("User", userSchema);
 
