@@ -1,7 +1,7 @@
 
 import express from 'express';
 // import { getLinks, createLink, deleteAll } from '../controllers/link'
-import { getUser } from '../controllers/userController'
+import { getUser, register, login } from '../controllers/userController'
 const router = express.Router();
 
 /* Link routing. */
@@ -12,6 +12,8 @@ const router = express.Router();
 //     })
 //   });
 router.get('/', getUser);
+router.post('/register', register);
+router.post('/login', login);
 // router.post('/', createLink);
 // router.delete('/', deleteAll)
 
