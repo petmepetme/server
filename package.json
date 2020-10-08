@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production nodemon --exec babel-node ./src/bin/www",
@@ -9,7 +9,7 @@
     "dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/bin/www",
     "clean": "rimraf dist",
     "build": "babel ./src --out-dir dist",
-    "prod": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/bin/www",
+    "prod": "cross-env NODE_ENV=production nodemon --exec babel-node ./src/bin/www",
     "watch": "nodemon",
     "heroku-prebuild": "npm install -f",
     "heroku-postbuild": "npm run build"
@@ -42,5 +42,8 @@
     "@babel/register": "^7.10.3",
     "cross-env": "^6.0.3",
     "nodemon": "^1.19.4"
+  },
+  "engines": {
+    "node": "12.18.3"
   }
 }
