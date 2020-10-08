@@ -9,7 +9,7 @@
     "dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/bin/www",
     "clean": "rimraf dist",
     "build": "babel ./src --out-dir dist",
-    "prod": "NODE_ENV=production npm-run-all clean build server:prod",
+    "prod": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/bin/www",
     "watch": "nodemon",
     "heroku-prebuild": "npm install -f",
     "heroku-postbuild": "npm run build"
@@ -31,7 +31,8 @@
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",
     "rimraf": "^3.0.2",
-    "sequelize": "^6.2.3"
+    "sequelize": "^6.2.3",
+    "serve": "^11.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
