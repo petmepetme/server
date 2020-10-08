@@ -10,7 +10,9 @@
     "clean": "rimraf dist",
     "build": "babel ./src --out-dir dist",
     "prod": "NODE_ENV=production npm-run-all clean build server:prod",
-    "watch": "nodemon"
+    "watch": "nodemon",
+    "heroku-prebuild": "npm install -f",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
