@@ -31,5 +31,4 @@ mongoose.connect(mongodUri, {
 })
 
 
-
 export default app;
