@@ -1,4 +1,4 @@
-import User from '../models/User'
+import User from '../models/User.js'
 import checkPassword from "../helpers/checkPassword"
 import jwt from 'jsonwebtoken'
 import validateEmail from '../helpers/validateEmail'
