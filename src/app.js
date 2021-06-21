@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
-app.use('/', indexRouter);
+app.use('/v1/', indexRouter);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -24,11 +24,11 @@ db.once('open', function() {
     console.log('mongo petme connected')
 });
 
-var mongodUri = `mongodb://${process.env.MLAB_USER}:${process.env.MLAB_PASS}${process.env.MLAB_URL}`
-mongoose.connect(mongodUri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+// var mongodUri = `mongodb://${process.env.MLAB_USER}:${process.env.MLAB_PASS}${process.env.MLAB_URL}`
+// mongoose.connect(mongodUri, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// })
 
 
 
