@@ -13,16 +13,17 @@
     "watch": "nodemon"
   },
   "dependencies": {
+    "async": "^3.2.0",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cron": "^1.8.2",
     "debug": "~2.6.9",
-    "dotenv": "^8.2.0",
-    "express": "~4.16.1",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "kue": "^0.11.6",
-    "mongoose": "^5.9.20",
+    "mongoose": "^5.12.13",
     "morgan": "~1.9.1",
     "nodemailer": "^6.4.13",
     "npm-run-all": "^4.1.5",
@@ -32,10 +33,10 @@
     "sequelize": "^6.2.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.3",
-    "@babel/core": "^7.10.3",
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
     "@babel/node": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-env": "^7.14.5",
     "@babel/register": "^7.10.3",
     "cross-env": "^6.0.3",
     "nodemon": "^1.19.4"
