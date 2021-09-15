@@ -1,21 +1,13 @@
 
 import express from 'express';
-// import { getLinks, createLink, deleteAll } from '../controllers/link'
-import { getUser, register, login } from '../controllers/userController'
+import { getUser, register, login, fillBio } from '../controllers/userController'
+import { validateEmail } from '../helpers/validateEmail'
 const router = express.Router();
 
-/* Link routing. */
-// router.get('/', function(req, res, next) {
-//     // res.render('index', { title: 'Express' });
-//     res.status(200).json({
-//       message: `index page`
-//     })
-//   });
 router.get('/', getUser);
-router.post('/register', register);
-router.post('/login', login);
-// router.post('/', createLink);
-// router.delete('/', deleteAll)
+router.post('/register', validateEmail, register);
+router.post('/login', validateEmail, login);
+router.post('/', fillBio);
 
 
 export default router

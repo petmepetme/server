@@ -16,7 +16,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
+<<<<<<< HEAD
 app.use('/v1/', indexRouter);
+=======
+app.use('/v1', indexRouter);
+>>>>>>> 11cb0a5dde162fc222583065b542df656c5eb8f5
 
 // const db = mongoose.connection;
 // db.on('error', console.error.bind(console, 'connection error:'));
@@ -29,7 +33,6 @@ mongoose.connect(mongodUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-
 
 
 export default app;

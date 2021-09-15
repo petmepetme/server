@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production nodemon --exec babel-node ./src/bin/www",
@@ -9,8 +9,10 @@
     "dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/bin/www",
     "clean": "rimraf dist",
     "build": "babel ./src --out-dir dist",
-    "prod": "NODE_ENV=production npm-run-all clean build server:prod",
-    "watch": "nodemon"
+    "prod": "cross-env NODE_ENV=production nodemon --exec babel-node ./src/bin/www",
+    "watch": "nodemon",
+    "heroku-prebuild": "npm install -f",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "async": "^3.2.0",
@@ -30,7 +32,10 @@
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",
     "rimraf": "^3.0.2",
-    "sequelize": "^6.2.3"
+    "sequelize": "^6.2.3",
+    "serve": "^11.3.2",
+    "cross-env": "^6.0.3",
+    "nodemon": "^1.19.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
@@ -38,7 +43,9 @@
     "@babel/node": "^7.10.3",
     "@babel/preset-env": "^7.14.5",
     "@babel/register": "^7.10.3",
-    "cross-env": "^6.0.3",
-    "nodemon": "^1.19.4"
+    "case-sensitive-paths-webpack-plugin": "^2.3.0"
+  },
+  "engines": {
+    "node": "12.18.3"
   }
 }
